@@ -31,4 +31,19 @@ public class Resource {
     public String postParam(@FormParam("message") String message) {
         return "You posted " + message;
     }
+
+    @GET
+    @Path("/calculator")
+    public CalculatorView getCalculator() {
+        return new CalculatorView();
+    }
+
+    @POST
+    @Path("/calculator")
+    public String postCalculator(@FormParam("num1") String num1, @FormParam("num2") String num2) {
+        int num1_int = Integer.parseInt(num1);
+        int num2_int = Integer.parseInt(num2);
+        int sum = num1_int + num2_int;
+        return "The sum is " + sum;
+    }
 }

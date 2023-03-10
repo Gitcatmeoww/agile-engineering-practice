@@ -9,3 +9,5 @@ def test_hello():
     assert "Hello" in driver.page_source
 
 
+def test_calculator():
+    pass
